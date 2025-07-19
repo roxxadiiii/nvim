@@ -1,7 +1,15 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
+require("core.lazy")
+vim.opt.termguicolors = true
 
-require("lua.core.lazy")
-require("lua.core")
-require("lua.plugins")
-require("lua.lsp")
-require("lua.utils")
+vim.cmd [[
+  highlight Normal guibg=NONE ctermbg=NONE
+  highlight NormalNC guibg=NONE ctermbg=NONE
+  highlight SignColumn guibg=NONE ctermbg=NONE
+  highlight VertSplit guibg=NONE ctermbg=NONE
+  highlight StatusLine guibg=NONE ctermbg=NONE
+  highlight EndOfBuffer guibg=NONE ctermbg=NONE
+]]
+
