@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
 require("core.lazy")
+vim.wo.relativenumber = true
 vim.opt.termguicolors = true
 
 vim.cmd [[
@@ -12,4 +12,3 @@ vim.cmd [[
   highlight StatusLine guibg=NONE ctermbg=NONE
   highlight EndOfBuffer guibg=NONE ctermbg=NONE
 ]]
-
