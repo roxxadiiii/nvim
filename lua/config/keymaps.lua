@@ -36,3 +36,10 @@ keymap("n", "<leader>nh", ":nohl<CR>", opts)
 
 keymap('n', '<leader>f' , ":Pick files<CR>")
 keymap('n', '<leader>h' , ":Pick help<CR>")
+keymap('n', '<leader>e', ':Neotree toggle<CR>', { silent = true, desc = 'Toggle Neo-tree' })
+    -- Optional: Keep Ctrl+n as alternative
+keymap('n', '<C-n>', ':Neotree toggle<CR>', { silent = true, desc = 'Toggle Neo-tree' })
+    -- Additional useful keymaps
+keymap('n', '<leader>nf', ':Neotree reveal<CR>', { silent = true, desc = 'Reveal current file in Neo-tree' })
+keymap('n', '<leader>ng', ':Neotree git_status<CR>', { silent = true, desc = 'Open Neo-tree git status' })
+keymap('n', '<leader>nb', ':Neotree buffers<CR>', { silent = true, desc = 'Open Neo-tree buffers' })
