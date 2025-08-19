@@ -13,4 +13,3 @@ pywal.setup()
 
 
 require('mini.pick').setup()
-
