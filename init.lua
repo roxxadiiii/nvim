@@ -1,4 +1,4 @@
-
+vim.g.maplocalleader = " "
 require("config")
 vim.cmd([[
   hi Normal guibg=NONE ctermbg=NONE

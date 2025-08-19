@@ -13,9 +13,9 @@ return {
   config = function()
     local builtin = require("veil.builtin")
 
-local default = {
-  sections = {
-    builtin.sections.animated(builtin.headers.frames_nvim, {
+    local default = {
+      sections = {
+        builtin.sections.animated(builtin.headers.frames_nvim, {
       hl = { fg = "#5de4c7" },
     }),
     builtin.sections.buttons({
@@ -60,5 +60,5 @@ local default = {
   startup = true,
   listed = false
 }
-end
+end,
 }

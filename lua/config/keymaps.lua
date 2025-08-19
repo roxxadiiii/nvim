@@ -4,7 +4,7 @@ local opts = { noremap = true, silent = true }
 
 -- Set leader key
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
