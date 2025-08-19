@@ -1,6 +1,7 @@
 vim.g.maplocalleader = " "
 require("config")
 vim.cmd([[
+  colorscheme gruvbox
   hi Normal guibg=NONE ctermbg=NONE
   hi NormalNC guibg=NONE ctermbg=NONE
   hi SignColumn guibg=NONE ctermbg=NONE
@@ -9,7 +10,7 @@ vim.cmd([[
 ]])
 local pywal = require('pywal')
 
-pywal.setup()
+-- pywal.setup()
 
 
-require('mini.pick').setup()
+-- require('mini.pick').setup()

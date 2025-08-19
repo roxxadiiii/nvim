@@ -6,9 +6,28 @@ return {
     local dashboard = require("alpha.themes.dashboard")
     local Job = require("plenary.job")
 
+    -- ASCII Art
+    local ascii_art = {
+      "_____________________                              _____________________",
+      "`-._:  .:'   `:::  .:\\           |\\__/|           /::  .:'   `:::  .:.-'",
+      "    \\      :          \\          |:   |          /         :       /    ",
+      "     \\     ::    .     `-_______/ ::   \\_______-'   .      ::   . /      ",
+      "      |  :   :: ::'  :   :: ::'  :   :: ::'      :: ::'  :   :: :|       ",
+      "      |     ;::         ;::         ;::         ;::         ;::  |       ",
+      "      |  .:'   `:::  .:'   `:::  .:'   `:::  .:'   `:::  .:'   `:|       ",
+      "      /     :           :           :           :           :    \\       ",
+      "     /______::_____     ::    .     ::    .     ::   _____._::____\\      ",
+      "                   `----._:: ::'  :   :: ::'  _.----'                    ",
+      "                          `--.       ;::  .--'                           ",
+      "                              `-. .:'  .-'                               ",
+      "                                 \\    /                                  ",
+      "                                  \\  /                                   ",
+      "                                   \\/                                    ",
+    }
+
     -- Cache location
     local cache_file = vim.fn.stdpath("cache") .. "/alpha_quote.json"
-    local cache_ttl = 60 * 60 -- 60 minutes in seconds
+    local cache_ttl = 60 * 60 -- 60 minutes
 
     -- read cache
     local function read_cache()
@@ -66,15 +85,12 @@ return {
       end
     end
 
-    -- placeholder (shown immediately)
-    dashboard.section.header.val = {
-      "==============================",
-      "     Welcome to Neovim 🚀     ",
-      "==============================",
+    -- placeholder shown immediately
+    dashboard.section.header.val = vim.list_extend(ascii_art, {
       "",
-      "Fetching a fresh dev quote...",
+      --"Fetching a fresh dev quote...",
       "",
-    }
+    })
 
     dashboard.section.buttons.val = {
       dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
@@ -87,14 +103,11 @@ return {
 
     -- update with actual quote (async)
     get_quote(function(quote)
-      dashboard.section.header.val = {
-        "==============================",
-        "     Welcome to Neovim 🚀     ",
-        "==============================",
+      dashboard.section.header.val = vim.list_extend(ascii_art, {
         "",
         quote,
         "",
-      }
+      })
       pcall(vim.cmd.AlphaRedraw)
     end)
   end,
