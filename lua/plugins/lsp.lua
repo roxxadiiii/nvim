@@ -1,3 +1,7 @@
+--    ┬  ┌─┐┌─┐┬  ┬ ┬┌─┐
+--    │  └─┐├─┘│  │ │├─┤
+--    ┴─┘└─┘┴o ┴─┘└─┘┴ ┴
+
 return {
   -- LSP Configuration & Plugins
   {
